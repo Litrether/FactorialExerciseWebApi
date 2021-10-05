@@ -51,7 +51,7 @@ namespace IntegrationTests.ControllerTests
         [Theory]
         [InlineData(1, "{null, 5}")]
         [InlineData(400, "{5, 7}")]
-        [InlineData(10000, "{7, null}")]
+        [InlineData(9223372036854775807, "{7, null}")]
         public async void GetNearestFactorialReturnValidValueRange(long x, string excepted)
         {
             var responseAdd5 = await TestFixture.Client.GetAsync($"factorials/5");
